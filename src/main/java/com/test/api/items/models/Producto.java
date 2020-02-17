@@ -2,6 +2,7 @@ package com.test.api.items.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 
 public class Producto {
 
@@ -10,6 +11,9 @@ public class Producto {
 	private Long id;
 	private String nombre;
 	private Double precio;
+	
+	@Transient
+	private Integer port;
 	
 	public ObjectId get_id() {
 		return _id;
@@ -35,6 +39,11 @@ public class Producto {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-
+	public Integer getPort() {
+		return port;
+	}
+	public void setPort(Integer port) {
+		this.port = port;
+	}
 	
 }
