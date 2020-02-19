@@ -19,7 +19,8 @@ public class ItemServiceFeign implements ItemServices {
 	private ProductoClienteRest clienteFeign; 
 
 	@Override
-	public List<Item> findAll() {		
+	public List<Item> findAll() {
+		System.out.println("into mehotd ItemServiceFeing");
 		return clienteFeign.listarProductos().stream().map(p -> new Item(p, 1)).collect(Collectors.toList());
 	}
 
